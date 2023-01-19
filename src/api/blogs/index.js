@@ -28,7 +28,7 @@ blogsRouter.get("/", async (req, res, next) => {
       .skip(mongoQuery.options.skip)
       .sort(mongoQuery.options.sort)
       .populate({
-        path: "authors",
+        path: "author",
       });
     res.send({
       links: mongoQuery.links(process.env.PORT, total),

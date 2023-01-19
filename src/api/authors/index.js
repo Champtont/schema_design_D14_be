@@ -16,7 +16,7 @@ authorsRouter.post("/", async (req, res, next) => {
 
 authorsRouter.get("/", async (req, res, next) => {
   try {
-    const authors = await AuthorsModel.find();
+    const authors = await AuthorModel.find();
     res.send(authors);
   } catch (error) {
     next(error);
