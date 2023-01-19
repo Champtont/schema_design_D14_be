@@ -25,7 +25,7 @@ authorsRouter.get("/", async (req, res, next) => {
 
 authorsRouter.get("/:authorId", async (req, res, next) => {
   try {
-    const author = await AuthorsModel.findById(req.params.authorId);
+    const author = await AuthorModel.findById(req.params.authorId);
     if (author) {
       res.send(author);
     } else {
@@ -40,7 +40,7 @@ authorsRouter.get("/:authorId", async (req, res, next) => {
 
 authorsRouter.put("/:authorId", async (req, res, next) => {
   try {
-    const updatedAuthor = await AuthorsModel.findByIdAndUpdate(
+    const updatedAuthor = await AuthorModel.findByIdAndUpdate(
       req.params.authorId,
       req.body,
       { new: true, runValidators: true }
@@ -59,7 +59,7 @@ authorsRouter.put("/:authorId", async (req, res, next) => {
 
 authorsRouter.delete("/:authorId", async (req, res, next) => {
   try {
-    const deletedAuthor = await AuthorsModel.findByIdAndDelete(
+    const deletedAuthor = await AuthorModel.findByIdAndDelete(
       req.params.authorId
     );
     if (deletedAuthor) {
