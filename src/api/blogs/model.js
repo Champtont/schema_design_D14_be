@@ -11,7 +11,7 @@ const blogsSchema = new Schema(
       value: { type: Number },
       unit: { type: String },
     },
-    author: [{ type: Schema.Types.ObjectId, ref: "Author" }],
+    author: { type: mongoose.Types.ObjectId, required: true, ref: "Author" },
     comments: [{ comment: { type: String }, commentDate: { type: String } }],
   },
   {
